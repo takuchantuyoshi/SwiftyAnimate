@@ -50,7 +50,7 @@ extension KeyframeAnimation: Animation {
     
     /// The animation block to pass to a `UIView` keyframe animation.
     public var animationBlock: AnimationBlock {
-        return {
+        return { 
             for keyframe in self.keyframes {
                 
                 let relativeStartTime: Double = {

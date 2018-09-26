@@ -45,7 +45,7 @@ extension BasicAnimation: Animation {
     public var animationBlock: AnimationBlock {
         switch self {
         case .cornerRadius(view: let view, duration: let duration, delay: _, radius: let radius, timing: let timing):
-            return {
+            return { 
                 let animation = CABasicAnimation(keyPath: "cornerRadius")
                 animation.timingFunction = timing.coreAnimationCurve
                 animation.fromValue = view.layer.cornerRadius
