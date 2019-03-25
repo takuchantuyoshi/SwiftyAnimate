@@ -19,7 +19,7 @@ public struct SpringAnimation: Animation {
     /// The inital velocity of the animation.
     public let velocity: CGFloat
     /// The options to apply to the animation.
-    public let options: UIViewAnimationOptions
+    public let options: UIView.AnimationOptions
     /// The block containing the animations to perform.
     public let animationBlock: AnimationBlock
     

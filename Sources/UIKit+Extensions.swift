@@ -15,7 +15,7 @@ public extension UIView {
      
      - parameter transforms: Array of transformations to be performed on the view represented by `Transform` enum cases.
      */
-    public func transformed(by transforms: [Transform]) {
+    func transformed(by transforms: [Transform]) {
         var transform: CGAffineTransform?
         for t in transforms {
             switch t {
@@ -39,7 +39,7 @@ public extension UIView {
      - parameter x: Value to shift in the x direction.
      - parameter y: Value to shift in the y direction.
      */
-    public func move(x: CGFloat, y: CGFloat) {
+    func move(x: CGFloat, y: CGFloat) {
         transformed(by: [.move(x: x, y: y)])
     }
     
@@ -48,7 +48,7 @@ public extension UIView {
      
      - parameter angle: Degrees to rotate the view.
      */
-    public func rotate(angle: CGFloat) {
+    func rotate(angle: CGFloat) {
         transformed(by: [.rotate(angle: angle)])
     }
     
@@ -58,7 +58,7 @@ public extension UIView {
      - parameter x: Value to scale in the x direction.
      - parameter y: Value to scale in the y direction.
      */
-    public func scale(x: CGFloat, y: CGFloat) {
+    func scale(x: CGFloat, y: CGFloat) {
         transformed(by: [.scale(x: x, y: y)])
     }
     
@@ -67,7 +67,7 @@ public extension UIView {
      
      - parameter color: Value for the new background color.
      */
-    public func color(_ color: UIColor) {
+    func color(_ color: UIColor) {
         backgroundColor = color
     }
 }
@@ -87,7 +87,7 @@ public extension UIView {
      
      - returns: Animate instance.
      */
-    public func corner(duration: TimeInterval, delay: TimeInterval = 0.0, radius: CGFloat, timing: Timing = .easeInOut) -> Animate {
+    func corner(duration: TimeInterval, delay: TimeInterval = 0.0, radius: CGFloat, timing: Timing = .easeInOut) -> Animate {
         return Animate(animation: BasicAnimation.cornerRadius(view: self, duration: duration, delay: delay, radius: radius, timing: timing))
     }
     
@@ -101,7 +101,7 @@ public extension UIView {
      
      - returns: Animate instance.
      */
-    public func color(duration: TimeInterval, delay: TimeInterval = 0.0, color value: UIColor, options: UIViewAnimationOptions = []) -> Animate {
+    func color(duration: TimeInterval, delay: TimeInterval = 0.0, color value: UIColor, options: UIView.AnimationOptions = []) -> Animate {
         return Animate(duration: duration, delay: delay, options: options) { [weak self] in
             self?.color(value)
         }
@@ -118,7 +118,7 @@ public extension UIView {
      
      - returns: Animate instance.
      */
-    public func scale(duration: TimeInterval, delay: TimeInterval = 0.0, x: CGFloat, y: CGFloat, options: UIViewAnimationOptions = []) -> Animate {
+    func scale(duration: TimeInterval, delay: TimeInterval = 0.0, x: CGFloat, y: CGFloat, options: UIView.AnimationOptions = []) -> Animate {
         return Animate(duration: duration, delay: delay, options: options) { [weak self] in
             self?.scale(x: x, y: y)
         }
@@ -135,7 +135,7 @@ public extension UIView {
      
      - returns: Animate instance.
      */
-    public func rotate(duration: TimeInterval, delay: TimeInterval = 0.0, angle: CGFloat, options: UIViewAnimationOptions = []) -> Animate {
+    func rotate(duration: TimeInterval, delay: TimeInterval = 0.0, angle: CGFloat, options: UIView.AnimationOptions = []) -> Animate {
         return Animate(duration: duration, delay: delay, options: options) { [weak self] in
             self?.rotate(angle: angle)
         }
@@ -152,7 +152,7 @@ public extension UIView {
      
      - returns: Animate instance.
      */
-    public func move(duration: TimeInterval, delay: TimeInterval = 0.0, x: CGFloat, y: CGFloat, options: UIViewAnimationOptions = []) -> Animate {
+    func move(duration: TimeInterval, delay: TimeInterval = 0.0, x: CGFloat, y: CGFloat, options: UIView.AnimationOptions = []) -> Animate {
         return Animate(duration: duration, delay: delay, options: options) { [weak self] in
             self?.move(x: x, y: y)
         }
@@ -168,7 +168,7 @@ public extension UIView {
      
      - returns: Animate instance.
      */
-    public func transform(duration: TimeInterval, delay: TimeInterval = 0.0, transforms: [Transform], options: UIViewAnimationOptions = []) -> Animate {
+    func transform(duration: TimeInterval, delay: TimeInterval = 0.0, transforms: [Transform], options: UIView.AnimationOptions = []) -> Animate {
         return Animate(duration: duration, delay: delay, options: options) { [weak self] in
             self?.transformed(by: transforms)
         }

@@ -15,7 +15,7 @@ public struct StandardAnimation: Animation {
     /// The delay after which to perform the animation.
     public let delay: TimeInterval
     /// The options to apply to the animation.
-    public let options: UIViewAnimationOptions
+    public let options: UIView.AnimationOptions
     /// The aniamtion block containing the animations to perform.
     public let animationBlock: AnimationBlock
     

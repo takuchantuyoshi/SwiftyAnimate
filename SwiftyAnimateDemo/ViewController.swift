@@ -33,7 +33,7 @@ class ViewController: UIViewController {
         }
     }
     
-    func tappedHeart(_ sender: UITapGestureRecognizer) {
+    @objc func tappedHeart(_ sender: UITapGestureRecognizer) {
         liked = !liked
         
 //        heartView.goCrazy().perform()
